@@ -28,7 +28,8 @@ export default function Home() {
   -> add API response to chat
   */
   async function apiCall() {
-    let question = "why does nlogn outperform n^2"
+    //let question = "why does nlogn outperform n^2"
+    let question ="why do we use big o notation to compare algorithms"
 
     setChat(chat => [...chat, {text: question,id: chat.length+1}])
     console.log("API req")
