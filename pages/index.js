@@ -30,6 +30,13 @@ export default function Home() {
   async function apiCall() {
     //let question = "why does nlogn outperform n^2"
     let question ="why do we use big o notation to compare algorithms"
+    //let question ="why do we use big o notation"
+    //let question ="what is big o"
+    //let question ="what is quick sort"
+    //let question ="what is big omega"
+    //let question ="how does binary search work"
+    //let question ="what is a recursive algorithm"
+    
 
     setChat(chat => [...chat, {text: question,id: chat.length+1}])
     console.log("API req")

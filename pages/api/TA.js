@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   const defaultModelAnswer = "Sorry, I couldn't answer your question"
   const model = await qna.load()
   
-  async function useModel() {
+  async function uModel() {
     const answers = await model.findAnswers(req.body, samplePassage)
 
     if(answers.length > 0){
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
   }
 
   if(req.method === 'POST'){
-    useModel()
+    uModel()
   }
   else{res.status(404)}
 }
