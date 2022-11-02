@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="testcss.css">
+<style>
+body {font-family: "Lucida Console", "Courier New", monospace;}
+
+.navbar {
+  width: 100%;
+  background-color: #e87500;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: Silver;
+}
+
+.active {
+  background-color: #e87500;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+div#header {
+  background-color: #154734;
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: silver;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+}
+
+.body {
+ background-color: silver;
+}
+
+img {
+  margin: -17px -45px 5px 30px;
+  width: 140px;
+  height: 122px;
+  flex: 0 0;
+  float: left;
+}
+
+</style>
+
+<div id="header">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHKgrBa3lZmpVjCjYgVILjxnqQopX6NJfX-EnLwolOsBGaI61X_yhdeCH9bf42NtGF5jg&usqp=CAU" />
+ <p>Welcome to Virtual TA for Algorithms!</p>
+ 
+</div>
+
+<body>
+<div class="navbar">
+  <a class="active" href="test.html"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="https://cs.utdallas.edu/people/faculty/chida-anjum/"><i class="fa fa-fw fa-envelope"></i> Contact Professor</a> 
+  <a href="https://cs.utdallas.edu/people/faculty/chida-anjum/"><i class="fa fa-fw fa-user"></i> Contact TA</a> 
+  <a href="#"><i class="fa fa-fw fa-key"></i> Helpful Links</a>
+  <a href="https://www.utdallas.edu/academics/calendar/"><i class="fa fa-fw fa-calendar"></i> UTD Calendar</a>
+</div>
+
+</body>
+
+<div class="main">
+ <p> hello </p>
+</div>
+
+<body>
+    <!-- Chatbot -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="button" class="collapsible">
+            Ask for help
+            <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Container -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Message -->
+                        <div id="chatbox">
+                            
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+
+                        <!-- User input -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                       placeholder="Press 'Enter' or click the icon">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                   onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="botresponse.js"></script>
+<script src="chatbot.js"></script>
+
+</html> 
