@@ -78,7 +78,7 @@ function sendButton() {
     getResponse();
 }
 
-}
+
 
 // Press enter to send a message
 $("#textInput").keypress(function (e) {
