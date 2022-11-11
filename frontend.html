@@ -1,19 +1,327 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Bot</title>
+<style>
+body {font-family: "Lucida Console", "Courier New", monospace;}
 
-    <link rel="stylesheet" href="frontend.css">
+.navbar {
+  width: 100%;
+  background-color: #e87500;
+  overflow: auto;
+}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-</head>
-<body style="background-color:orange;"></body>
-<h1> CS 4485 : Virtual TA </h1>
+.navbar a:hover {
+  background-color: rgb(228, 41, 41);
+}
+
+.active {
+  background-color: #e87500;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+div#header {
+  background-color: #154734;
+  padding: 20px;
+  text-align: center;
+  font-size: 37px;
+  color: silver;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+}
+
+.body {
+ background-color: silver;
+}
+
+img {
+  margin: -17px -45px 5px 30px;
+  width: 140px;
+  height: 122px;
+  flex: 0 0;
+  float: left;
+}
+
+
+.chat-bar-collapsible {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.collapsible {
+    background-color: #e87500;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 350px;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px 10px 0px 0px;
+    border: 3px solid white;
+    border-bottom: none;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.full-chat-block {
+    width: 350px;
+    background: white;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width: none;
+    height: max-content;
+    transition: max-height 0.2s ease-out;
+}
+
+.outer-container {
+    min-height: 500px;
+    bottom: 0%;
+    position: relative;
+}
+
+.chat-container {
+    max-height: 500px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    hyphens: auto;
+}
+
+    .chat-container::-webkit-scrollbar {
+        display: none;
+    }
+
+.chat-bar-input-block {
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
+    font-size: 20px;
+}
+
+#chat-icon:hover {
+    opacity: .7;
+}
+
+/* Chat bubbles */
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: white;
+    outline: none
+}
+
+.userText {
+    color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+    clear: both;
+}
+
+    .userText span {
+        line-height: 1.5em;
+        display: inline-block;
+        background: #5ca6fa;
+        padding: 10px;
+        border-radius: 8px;
+        border-bottom-right-radius: 2px;
+        max-width: 80%;
+        margin-right: 10px;
+        animation: floatup .5s forwards
+    }
+
+.botText {
+    color: #000;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+}
+
+    .botText span {
+        line-height: 1.5em;
+        display: inline-block;
+        background: #e0e0e0;
+        padding: 10px;
+        border-radius: 8px;
+        border-bottom-left-radius: 2px;
+        max-width: 80%;
+        margin-left: 10px;
+        animation: floatup .5s forwards
+    }
+
+@keyframes floatup {
+    from {
+        transform: translateY(14px);
+        opacity: .0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .full-chat-block {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .chat-bar-collapsible {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .collapsible {
+        width: 100%;
+        border: 0px;
+        border-top: 3px solid white;
+        border-radius: 0px;
+    }
+}
+
+nav {
+  float: left;
+  width: 20%;
+  background: #CCCCCC;
+  padding: 20px;
+}
+
+nav h {
+ color: #154734;
+ font-size: 28px;
+ font-family: "Lucida Console", "Courier New", monospace;
+ font-weight: bolder;
+}
+
+/* Style the list inside the left side menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  font-weight: bold;
+}
+
+li a {
+  color:#e87500;
+}
+
+li a:link {
+  text-decoration: none;
+}
+
+li a:visited {
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+li a:active {
+  text-decoration: underline;
+}
+
+</style>
+
+<div id="header">
+  <img src="https://websvcs.utdallas.edu/shared/svg/utd-emblem-solid-orange.svg" alt="UTD">
+ <p>Welcome to Virtual TA for Algorithms!</p>
+ 
+</div>
+
+<body>
+<div class="navbar">
+  <a class="active" href="test.html"><i class="fa fa-fw fa-home"></i> Home</a> 
+  <a href="https://cs.utdallas.edu/people/faculty/chida-anjum/"><i class="fa fa-fw fa-envelope"></i> Contact Professor</a> 
+  <a href="https://cs.utdallas.edu/people/faculty/chida-anjum/"><i class="fa fa-fw fa-user"></i> Contact TA</a> 
+  <a href="https://docs.google.com/viewerng/viewer?url=https://dox.utdallas.edu/syl124492"><i class="fa fa-fw fa-key"></i> Syllabus</a>
+  <a href="https://www.utdallas.edu/academics/calendar/"><i class="fa fa-fw fa-calendar"></i> UTD Calendar</a>
+</div>
+
+<section>
+  <nav>
+    <center>
+    <h> Related </h>
+    <br> </br>
+    <ul>
+      <li><a href="https://techdevguide.withgoogle.com/paths/data-structures-and-algorithms/#sequence-5"><i class="fa fa-fw fa-caret-square-o-right"></i> DSA Complete Interactive Guide</a></li>
+      <br> </br>
+      <li><a href="https://www.bigocheatsheet.com/"><i class="fa fa-fw fa-thumbs-o-up"></i> Big-O Cheat Sheet</a></li>
+      <br> </br>
+      <li><a href="https://www.hackerrank.com/domains/algorithms"><i class="fa fa-fw fa-pencil-square-o"></i> Solve Algorithms</a></li>
+      <br> </br>
+      <li><a href="https://www.khanacademy.org/computing/computer-science/algorithms"><i class="fa fa-fw fa-video-camera"></i> Khan Academy - Algorithms</a></li>
+      <br> </br>
+      <li><a href="https://www.tutorialspoint.com/data_structures_algorithms/greedy_algorithms.htm"><i class="fa fa-fw fa-balance-scale"></i> Greedy Algorithms</a></li>
+      <br> </br>
+      <li><a href="https://www.tutorialspoint.com/data_structures_algorithms/sorting_algorithms.htm"><i class="fa fa-fw fa-sort-numeric-asc"></i> Sorting Algorithms</a></li>
+      <br> </br>
+      <li><a href="https://www.tutorialspoint.com/data_structures_algorithms/dsa_quick_guide.htm"><i class="fa fa-fw fa-fast-forward"></i> DSA Quick Guide</a></li>
+    </ul>
+    </center>
+  </nav>
+ </section>
+
+</body>
+
+<div class="main">
+</div>
+
 <body>
     <!-- Chatbot -->
     <div class="chat-bar-collapsible">
@@ -62,10 +370,26 @@
 
 </body>
 
+<footer>
+<marquee behavior="scroll" bgcolor="#154734" loop="-1" width="100%" scrolldelay = "100" position:"absolute">
+   <i>
+      <font color="white">
+        Currently it is...
+        <strong>
+         <span id="time"></span>
+        </strong>           
+      </font>
+   </i>
+</marquee> 
+<script>
+var today = new Date();
+document.getElementById('time').innerHTML=today;
+</script>
+
+</footer> 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="response.js"></script>
-
-<script src="chat.js"></script>
+<script src="botresponse.js"></script>
+<script src="chatbot.js"></script>
 
 </html>
