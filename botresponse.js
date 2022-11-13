@@ -1,4 +1,4 @@
-﻿function getBotResponse(input) {
+function getBotResponse(input) {
 
     // test responses
     if (input == "hello") {
