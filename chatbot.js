@@ -1,8 +1,8 @@
-﻿// Collapsible
-var collapse = document.getElementsByClassName("collapsible");
+// Collapsible
+var coll = document.getElementsByClassName("collapsible");
 
-for (let i = 0; i < collapse.length; i++) {
-    collapse[i].addEventListener("click", function () {
+for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
 
         var content = this.nextElementSibling;
@@ -24,8 +24,6 @@ function firstBotMessage() {
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
 
     
-
-    $("#chat-timestamp").append(time);
     document.getElementById("userInput").scrollIntoView(false);
 }
 
@@ -45,7 +43,7 @@ function getResponse() {
     let userText = $("#textInput").val();
 
     if (userText == "") {
-        userText = "Null response!";
+        userText = "missing text";
     }
 
     let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
@@ -60,7 +58,7 @@ function getResponse() {
 
 }
 
-// Handles sending text through button clicks
+// Handles sending text via button clicks
 function buttonSendText(sampleText) {
     let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
 
@@ -68,16 +66,12 @@ function buttonSendText(sampleText) {
     $("#chatbox").append(userHtml);
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
 
-    //Uncomment this if you want the bot to respond to this buttonSendText event
-    // setTimeout(() => {
-    //     getHardResponse(sampleText);
-    // }, 1000)
+    
 }
 
 function sendButton() {
     getResponse();
 }
-
 
 
 // Press enter to send a message
