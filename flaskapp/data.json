@@ -1,4 +1,9 @@
 {"intents": [
+        {"tag": "pseudocode",
+         "patterns": ["bubble sort","what is bubble sort", "bubble", "bubble sort pseudocode", "bubble pseudocode"],
+         "responses": ["begin BubbleSort(list) for all elements of list if list[i] > list[i+1] swap(list[i], list[i+1])end if end for return list    end BubbleSort"],
+         "context": [""]
+        },
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
          "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
