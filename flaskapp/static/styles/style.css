@@ -25,6 +25,7 @@ body {
   height: 80vh;
   background-image: var(--body-bg);
   font-family: Helvetica, sans-serif;
+  background-image: url('https://utdmercury.com/wp-content/uploads/2019/08/utdallas_min.jpg');
 }
 
 .msger {
