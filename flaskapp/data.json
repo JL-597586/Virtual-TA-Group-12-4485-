@@ -4,6 +4,11 @@
          "responses": ["The time complexity for this code is O(n)"],
          "context": ["time complexity"]
         },
+        {"tag": "is_on^2",
+         "patterns": ["for {for}","for each for each", "foreach foreach","for x in array for x in array", "for in for in" , "for (int i = 0; i < n; i++) {a[i] = INT;for (int i = 0; i < m; i++) {b[i] = INT;}}", "what time complexity", "time complexity", "time"],
+         "responses": ["The time complexity for this code is O(n^2)"],
+         "context": ["time complexity"]
+        },
         {"tag": "o1_example",
          "patterns": ["what is an example of o(1)", "o(1)", "o(1) example", "o1", "o1 pseudocode"],
          "responses": ["Accessing Array Index (int a = ARR[5];)", "Inserting a node in Linked List","Pushing and Poping on Stack","Insertion and Removal from Queue","Finding out the parent or left/right child of a node in a tree stored in Array","Jumping to Next/Previous element in Doubly Linked List"],
