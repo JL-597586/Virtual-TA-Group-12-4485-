@@ -1,13 +1,48 @@
 {"intents": [
+        {"tag": "is_on",
+         "patterns": ["[]", "array", "for","for each", "foreach","for x in array", "for in", "for (int i = 0; i < n; i++) {a[i] = INT;}", "what time complexity", "time complexity", "time"],
+         "responses": ["The time complexity for this code is O(n)"],
+         "context": ["time complexity"]
+        },
+        {"tag": "is_on^2",
+         "patterns": ["for {for}","for each for each", "foreach foreach","for x in array for x in array", "for in for in" , "for (int i = 0; i < n; i++) {a[i] = INT;for (int i = 0; i < m; i++) {b[i] = INT;}}", "what time complexity", "time complexity", "time"],
+         "responses": ["The time complexity for this code is O(n^2)"],
+         "context": ["time complexity"]
+        },
+        {"tag": "o1_example",
+         "patterns": ["what is an example of o(1)", "o(1)", "o(1) example", "o1", "o1 pseudocode"],
+         "responses": ["Accessing Array Index (int a = ARR[5];)", "Inserting a node in Linked List","Pushing and Poping on Stack","Insertion and Removal from Queue","Finding out the parent or left/right child of a node in a tree stored in Array","Jumping to Next/Previous element in Doubly Linked List"],
+         "context": ["example"]
+        },
+        {"tag": "on_example",
+         "patterns": ["what is an example of o(n)", "o(n)", "o(n) example", "on", "on pseudocode"],
+         "responses": ["Traversing an array","Traversing a linked list","Linear Search","Deletion of a specific element in a Linked List (Not sorted)","Comparing two strings"],
+         "context": ["example"]
+        },
+        {"tag": "ologn_example",
+         "patterns": ["what is an example of o(log n)", "o(log n)", "o(log n) example", "o log n", "o log n pseudocode"],
+         "responses": ["Binary Search","Finding largest/smallest number in a binary search tree","Certain Divide and Conquer Algorithms based on Linear functionality","Calculating Fibonacci Numbers"],
+         "context": ["example"]
+        },
+        {"tag": "onlogn_example",
+         "patterns": ["what is an example of o(n log n)", "o(n log n)", "o(n log n) example", "o n log n", "o n log n pseudocode"],
+         "responses": ["Merge Sort", "Heap Sort", "Quick Sort"],
+         "context": ["example"]
+        },
         {"tag": "bubble_pseudocode",
          "patterns": ["bubble sort","what is bubble sort", "bubble", "bubble sort pseudocode", "bubble pseudocode"],
-         "responses": ["begin BubbleSort(list) for all elements of list if list[i] > list[i+1] swap(list[i], list[i+1])end if end for return list    end BubbleSort"],
-         "context": [""]
+         "responses": ["begin BubbleSort(list)  for all elements of list if list[i] > list[i+1] swap(list[i], list[i+1])end if end for return list    end BubbleSort"],
+         "context": ["pseudocode"]
         },
         {"tag": "merge_pseudocode",
          "patterns": ["merge sort","what is merge sort", "merge", "merge sort pseudocode", "merge pseudocode"],
          "responses": ["    step 1: start       step 2: declare array and left, right, mid variable    step 3: perform merge function.        if left > right    return         mid= (left+right)/2        mergesort(array, left, mid)        mergesort(array, mid+1, right)     merge(array, left, mid, right)     step 4: Stop"],
-         "context": [""]
+         "context": ["pseudocode"]
+        },
+        {"tag": "insertion_pseudocode",
+         "patterns": ["insertion sort","what is insertion sort", "insertion", "insertion sort pseudocode", "insertion pseudocode"],
+         "responses": ["procedure insertionSort( A : array of items )   int holePosition        int valueToInsert       for i = 1 to length(A) inclusive do:    /* select value to be inserted */       valueToInsert = A[i]    holePosition = i        /*locate hole position for the element to be inserted */                while holePosition > 0 and A[holePosition-1] > valueToInsert do:                A[holePosition] = A[holePosition-1]             holePosition = holePosition -1          end while               /* insert the number at hole position */                A[holePosition] = valueToInsert         end for                         end procedure"],
+         "context": ["pseudocode"]
         },
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
@@ -26,57 +61,7 @@
         },
         {"tag": "noanswer",
          "patterns": [],
-         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
-         "context": [""]
-        },
-        {"tag": "options",
-         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
-         "context": [""]
-        },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": [],
-         "responses": ["Loading Blood pressure result for Patient"],
-         "context": [""]
-        },
-        {"tag": "pharmacy_search",
-         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
-         "responses": ["Please provide pharmacy name"],
-         "context": ["search_pharmacy_by_name"]
-        },
-        {"tag": "search_pharmacy_by_name",
-         "patterns": [],
-         "responses": ["Loading pharmacy details"],
-         "context": [""]
-        },
-        {"tag": "hospital_search",
-         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["Please provide hospital name or location"],
-         "context": ["search_hospital_by_params"]
-        },
-        {"tag": "search_hospital_by_params",
-         "patterns": [],
-         "responses": ["Please provide hospital type"],
-         "context": ["search_hospital_by_type"]
-        },
-        {"tag": "search_hospital_by_type",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
+         "responses": ["Sorry, can't understand you. Feel free to message a TA or professor using the links in this site"],
          "context": [""]
         }
    ]
