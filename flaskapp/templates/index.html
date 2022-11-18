@@ -12,7 +12,7 @@
 </head>
 
 <style>
-    
+
     body {
         font-family: "Lucida Console", "Courier New", monospace;
     }
@@ -286,6 +286,28 @@
         li a:active {
             text-decoration: underline;
         }
+
+
+
+
+    button {
+        padding: 10px 20px;
+        width: 100px;
+        height: 60px;
+        margin-bottom: 20px;
+        font-size: 26px;
+        font-weight: bold;
+        font-family: cursive;
+        background: #000803;
+        border: none;
+        color: #ff8d20;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+        button:hover {
+            background: #210b04;
+        }
 </style>
 
 <div id="header">
@@ -327,6 +349,10 @@
         </nav>
     </section>
 
+
+
+
+
 </body>
 
 <div class="main">
@@ -360,10 +386,88 @@
 
         </main>
 
+
+
         <form class="msger-inputarea">
             <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
             <button type="submit" class="msger-send-btn">Send</button>
+
+
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &not; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &plusmn; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &middot; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &rarr; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &rArr; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &hArr; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &forall; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &part; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &exist; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &empty; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &nabla; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &isin; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &notin; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &prod; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &sum; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &radic; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &infin; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &and; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &or; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &cap; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &cup; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &asymp; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &ne; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &equiv; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &le; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &ge; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &sub; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &sup; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &deg; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &times; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &lfloor; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &rfloor; </button>
+
+            <button type="button" id="chat-icon" onclick="number(value)"> &lceil; </button>
+
+
+
         </form>
+
+
+
+
+
     </section>
 
 
@@ -396,14 +500,14 @@
             //   Simple solution for small apps
             const msgHTML = `
 <div class="msg ${side}-msg">
-                      <div class="msg-img" style="background-image: url(${img})"></div>
-                      <div class="msg-bubble">
-                        <div class="msg-info">
-                          <div class="msg-info-name">${name}</div>
-                          <div class="msg-info-time">${formatDate(new Date())}</div>
-                        </div>
-                        <div class="msg-text">${text}</div>
-                      </div>
+                                              <div class="msg-img" style="background-image: url(${img})"></div>
+                                              <div class="msg-bubble">
+                                                <div class="msg-info">
+                                                  <div class="msg-info-name">${name}</div>
+                                                  <div class="msg-info-time">${formatDate(new Date())}</div>
+                                                </div>
+                                                <div class="msg-text">${text}</div>
+                                              </div>
 </div>
 `;
 
@@ -437,8 +541,12 @@
             return `${h.slice(-2)}:${m.slice(-2)}`;
         }</script>
 
-</body>
 
+
+
+
+
+</body>
 
 
 
