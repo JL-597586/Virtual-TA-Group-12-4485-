@@ -208,6 +208,137 @@
         "patterns": ["Describe a O(n lg n) –time algorithm that, given a set S of n integers and another integer x, determines whether or not there exist two elements in S whose sum is exactly x"],
         "responses": ["The following algorithm solves the problem:     1. Sort the elements in S       2. Form the set S’ = {z : z = x - y for some y subset of S}     3. Sort the elements in S’      4. Merge the sorted sets S and S’       5. There exists two elements in S whose sum is exactly x if and only if the same value appears in consecutive positions in the merged output.   To justify the claim in step 4, first observe that if any value appears twice in the merged output, it must appear in consecutive positions. Thus, we can restate the condition in step 5 as there exists two elements in S whose sum is exactly x if and only if the same value appears twice in the merged output."],
         "context": ["algorithm"]
+       },
+       {"tag": "selction sort worst case time complexity",
+        "patterns": ["what is the time complexity of selection sort", "what is the big o of selection sort", "what is the worst case time of selection sort"],
+        "responses": ["O(n^2)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "selction sort best case time complexity",
+        "patterns": ["what is the best case time complexity of selection sort", "what is the big omega of selection sort", "what is the best case time of selection sort"],
+        "responses": ["Ω(n^2)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "bubble sort worst case time complexity",
+        "patterns": ["what is the time complexity of bubble sort", "what is the big o of bubble sort", "what is the worst case time of bubble sort"],
+        "responses": ["O(n^2)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "bubble sort best case time complexity",
+        "patterns": ["what is the best case time complexity of bubble sort", "what is the big omega of bubble sort", "what is the best case time of bubble sort"],
+        "responses": ["Ω(n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "insertion sort worst case time complexity",
+        "patterns": ["what is the time complexity of insertion sort", "what is the big o of insertion sort", "what is the worst case time of insertion sort"],
+        "responses": ["O(n^2)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "insertion sort best case time complexity",
+        "patterns": ["what is the best case time complexity of insertion sort", "what is the big omega of insertion sort", "what is the best case time of insertion sort"],
+        "responses": ["Ω(n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "heap sort worst case time complexity",
+        "patterns": ["what is the time complexity of heap sort", "what is the big o of heap sort", "what is the worst case time of heap sort"],
+        "responses": ["O(n log n)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "heap sort best case time complexity",
+        "patterns": ["what is the best case time complexity of heap sort", "what is the big omega of heap sort", "what is the best case time of heap sort"],
+        "responses": ["Ω(n log n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "quick sort worst case time complexity",
+        "patterns": ["what is the time complexity of quick sort", "what is the big o of quick sort", "what is the worst case time of quick sort"],
+        "responses": ["O(n^2)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "quick sort best case time complexity",
+        "patterns": ["what is the best case time complexity of quick sort", "what is the big omega of quick sort", "what is the best case time of quick sort"],
+        "responses": ["Ω(n log n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "merge sort worst case time complexity",
+        "patterns": ["what is the time complexity of merge sort", "what is the big o of merge sort", "what is the worst case time of merge sort"],
+        "responses": ["O(n log n)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "merge sort best case time complexity",
+        "patterns": ["what is the best case time complexity of merge sort", "what is the big omega of merge sort", "what is the best case time of merge sort"],
+        "responses": ["Ω(n log n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "bucket sort worst case time complexity",
+        "patterns": ["what is the time complexity of bucket sort", "what is the big o of bucket sort", "what is the worst case time of bucket sort"],
+        "responses": ["O(n^2)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "bucket sort best case time complexity",
+        "patterns": ["what is the best case time complexity of bucket sort", "what is the big omega of bucket sort", "what is the best case time of bucket sort"],
+        "responses": ["Ω(n + k)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "radix sort worst case time complexity",
+        "patterns": ["what is the time complexity of radix sort", "what is the big o of radix sort", "what is the worst case time of radix sort"],
+        "responses": ["O(nk)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "radix sort best case time complexity",
+        "patterns": ["what is the best case time complexity of radix sort", "what is the big omega of radix sort", "what is the best case time of radix sort"],
+        "responses": ["Ω(nk)"],
+        "context": ["time complexity", "best case", "big omega"]
+       }
+       ,
+       {"tag": "count sort worst case time complexity",
+        "patterns": ["what is the time complexity of count sort", "what is the big o of count sort", "what is the worst case time of count sort"],
+        "responses": ["O(n + k)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "count sort best case time complexity",
+        "patterns": ["what is the best case time complexity of count sort", "what is the big omega of count sort", "what is the best case time of count sort"],
+        "responses": ["Ω(n + k)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "shell sort worst case time complexity",
+        "patterns": ["what is the time complexity of shell sort", "what is the big o of shell sort", "what is the worst case time of shell sort"],
+        "responses": ["O(n^2"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "shell sort best case time complexity",
+        "patterns": ["what is the best case time complexity of shell sort", "what is the big omega of shell sort", "what is the best case time of shell sort"],
+        "responses": ["Ω(n log n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "tim sort worst case time complexity",
+        "patterns": ["what is the time complexity of tim sort", "what is the big o of tim sort", "what is the worst case time of tim sort"],
+        "responses": ["O(n log n)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "tim sort best case time complexity",
+        "patterns": ["what is the best case time complexity of tim sort", "what is the big omega of tim sort", "what is the best case time of tim sort"],
+        "responses": ["Ω(n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "tree sort worst case time complexity",
+        "patterns": ["what is the time complexity of tree sort", "what is the big o of tree sort", "what is the worst case time of tree sort"],
+        "responses": ["O(n^2)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "tree sort best case time complexity",
+        "patterns": ["what is the best case time complexity of tree sort", "what is the big omega of tree sort", "what is the best case time of tree sort"],
+        "responses": ["Ω(n log n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "cube sort worst case time complexity",
+        "patterns": ["what is the time complexity of cube sort", "what is the big o of cube sort", "what is the worst case time of cube sort"],
+        "responses": ["O(n log n)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "cube sort best case time complexity",
+        "patterns": ["what is the best case time complexity of cube sort", "what is the big omega of cube sort", "what is the best case time of cube sort"],
+        "responses": ["Ω(n)"],
+        "context": ["time complexity", "best case", "big omega"]
        }
    ]
 }
