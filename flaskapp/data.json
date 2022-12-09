@@ -1,13 +1,28 @@
 {"intents": [
-        {"tag": "is_on",
-        "patterns": ["[]", "array", "for","for each", "foreach","for x in array", "for in", "for (int i = 0; i < n; i++) {a[i] = INT;}", "what time complexity", "time complexity", "time"],
-        "responses": ["The time complexity for this code is O(n)"],
-        "context": ["time complexity"]
+      {"tag": "is_o 1",
+        "patterns": ["int addition(int x, int y) { return x + y; }"],
+        "responses": ["The time complexity for this code is O(1)"],
+        "context": ["time complexity", "code", "this"]
        },
-       {"tag": "is_on^2",
-        "patterns": ["for {for}","for each for each", "foreach foreach","for x in array for x in array", "for in for in" , "for (int i = 0; i < n; i++) {a[i] = INT;for (int i = 0; i < m; i++) {b[i] = INT;}}", "what time complexity", "time complexity", "time"],
+        {"tag": "is_o n",
+        "patterns": ["bool Contains(IList elements, int value) { foreach (var element in elements) { if (element == value) return true; } return false; }","for (int i = 0; i < n; i++) {a[i] = INT;}", "void printAllElementOfArray(int arr[], int size){for (int i = 0; i < size; i++){printf(n, arr[i]);}}"],
+        "responses": ["The time complexity for this code is O(n)"],
+        "context": ["time complexity", "code", "this"]
+       },
+       {"tag": "is_o n^2",
+        "patterns": ["for (int i = 0; i < n; i++) {a[i] = INT;for (int i = 0; i < m; i++) {b[i] = INT;}}"],
         "responses": ["The time complexity for this code is O(n^2)"],
-        "context": ["time complexity"]
+        "context": ["time complexity", "code", "this"]
+       },
+       {"tag": "is_o n log n",
+        "patterns": ["int logarithmicExample(int n) { while (n > 1) { n = n / 2;  } }"],
+        "responses": ["The time complexity for this code is O(n log n)"],
+        "context": ["time complexity", "code", "this"]
+       },
+       {"tag": "is_o 2^n",
+        "patterns": ["int fibonacci(int num) { if (num <= 1) return num; return fibonacci(num - 2) + fibonacci(num - 1); }"],
+        "responses": ["The time complexity for this code is O(2^n)"],
+        "context": ["time complexity", "code", "this"]
        },
        {"tag": "o1_example",
         "patterns": ["what is an example of o(1)", "o(1)", "o(1) example", "o1", "o1 pseudocode"],
@@ -338,6 +353,26 @@
        {"tag": "cube sort best case time complexity",
         "patterns": ["what is the best case time complexity of cube sort", "what is the big omega of cube sort", "what is the best case time of cube sort"],
         "responses": ["Ω(n)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "linear search worst case time complexity",
+        "patterns": ["what is the time complexity of linear search", "what is the big o of linear search", "what is the worst case time of linear search"],
+        "responses": ["O(n)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "linear search best case time complexity",
+        "patterns": ["what is the best case time complexity of linear search", "what is the big omega of linear search", "what is the best case time of linear search"],
+        "responses": ["Ω(1)"],
+        "context": ["time complexity", "best case", "big omega"]
+       },
+       {"tag": "binary search worst case time complexity",
+        "patterns": ["what is the time complexity of binary search", "what is the big o of binary search", "what is the worst case time of libinarynear search"],
+        "responses": ["O(log n)"],
+        "context": ["time complexity", "worst case", "big o"]
+       },
+       {"tag": "binary search best case time complexity",
+        "patterns": ["what is the best case time complexity of binary search", "what is the big omega of binary search", "what is the best case time of binary search"],
+        "responses": ["Ω(1)"],
         "context": ["time complexity", "best case", "big omega"]
        }
    ]
