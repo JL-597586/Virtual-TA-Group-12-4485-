@@ -12,7 +12,7 @@ Commands:
     sudo pip3 install flask
 
 To run project (within ~/virtualta12/flaskapp directory):
-Commands:
+Commands (model must be re-trained before first website run):
 (to re-train model)
     python3 training.py
 
